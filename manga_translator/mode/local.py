@@ -57,9 +57,10 @@ class MangaTranslatorLocal(MangaTranslator):
             except Exception as e:
                 print("Failed to load configuration file")
                 raise e
+            config_dict["translator"]["target_lang"] = params["output_lang"]
             config = Config(**config_dict)
         else:
-            config = Config()
+            raise ValueError("Can not find config file")
         # Handle format
         file_ext = params.get('format')
         if params.get('save_quality', 100) < 100:
