@@ -269,7 +269,7 @@ class DeepseekTranslator(CommonTranslator):
 
         try:
             response = await self.client.chat.completions.create(
-                model='deepseek-chat',
+                model='oomol-chat',
                 messages=messages,
                 max_tokens=self._MAX_TOKENS // 2,
                 temperature=self.temperature,
